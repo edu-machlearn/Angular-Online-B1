@@ -13,4 +13,6 @@ public interface EmployeeService {
 
 	List<Employee> employees();
 
+	Employee getEmpById(Long id);
+
 }
