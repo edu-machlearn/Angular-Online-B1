@@ -1,0 +1,9 @@
+<h1>This is GET API </h1>
+<button (click)="callPosts()">Click Me to Show Data</button>    
+    
+<ul *ngFor="let post of posts">
+    <li>{{post.userId}}</li>
+    <li>{{post.id}}</li>
+    <li>{{post.title}}</li>
+    <li>{{post.body}}</li>
+</ul>
