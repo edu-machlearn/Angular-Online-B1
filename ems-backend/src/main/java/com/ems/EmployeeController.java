@@ -1,9 +1,13 @@
 package com.ems;
 
 import java.util.List;
+import java.util.Map;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,5 +38,10 @@ public class EmployeeController {
 	@GetMapping("/empById/{id}")
 	public Employee getEmpById(@PathVariable Long id) {
 		return employeeService.getEmpById(id);
+	}
+	
+	@DeleteMapping("/deleteById/{id}")
+	public Map<String, String> deleteById(@PathVariable Long id) {
+		return employeeService.deleteById(id);
 	}
 }
