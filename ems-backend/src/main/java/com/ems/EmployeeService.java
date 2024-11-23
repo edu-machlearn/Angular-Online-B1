@@ -19,4 +19,6 @@ public interface EmployeeService {
 
 	Map<String, String> deleteById(Long id);
 
+	Employee updateEmp(Employee emp);
+
 }

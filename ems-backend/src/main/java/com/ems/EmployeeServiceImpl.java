@@ -47,4 +47,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return res;
 	}
 
+	@Override
+	public Employee updateEmp(Employee emp) {
+		Optional<Employee> findEmpById = dao.findById(emp.getId());
+		if (findEmpById.isEmpty()) {
+			System.out.println("Data Not Found!");
+			return null;
+		} else {
+			Employee existEmp = findEmpById.get();
+			existEmp.setFirstName(emp.getFirstName());
+			existEmp.setLastName(emp.getFirstName());
+			existEmp.setMail(emp.getMail());
+			existEmp.setMobile(emp.getMobile());
+			return dao.save(existEmp);
+		}
+	}
+
 }
