@@ -56,7 +56,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		} else {
 			Employee existEmp = findEmpById.get();
 			existEmp.setFirstName(emp.getFirstName());
-			existEmp.setLastName(emp.getFirstName());
+			existEmp.setLastName(emp.getLastName());
 			existEmp.setMail(emp.getMail());
 			existEmp.setMobile(emp.getMobile());
 			return dao.save(existEmp);
